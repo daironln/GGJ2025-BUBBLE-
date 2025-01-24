@@ -15,18 +15,21 @@ public enum GameState{
 }
 public class GameManager : PersistentSingleton<GameManager>
 {
+
+    private bool _isPaused;
     public GameState gameState;
 
 
     private void Start()
     {
+        _isPaused = false;
         gameState = GameState.None;
     }   
 
 
-    public void Pause(bool paused)
+    public void Pause()
     {
-        if(paused)
+        if(_isPaused)
         {
             gameState = GameState.InPlay;
         }
@@ -36,5 +39,7 @@ public class GameManager : PersistentSingleton<GameManager>
 
             Time.timeScale = 0;
         }
+
+        _isPaused = !_isPaused;
     }
 }
