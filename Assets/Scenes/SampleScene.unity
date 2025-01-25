@@ -4758,8 +4758,8 @@ MonoBehaviour:
   wallSide: 0
   collisionRadius: 0.1
   bottomOffset: {x: 0, y: -0.79}
-  rightOffset: {x: 0.5, y: -0.33}
-  leftOffset: {x: -0.5, y: -0.33}
+  rightOffset: {x: 0.3, y: -0.33}
+  leftOffset: {x: -0.3, y: -0.33}
 --- !u!1 &234361388
 GameObject:
   m_ObjectHideFlags: 0
@@ -15129,52 +15129,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &663148878
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 663148880}
-  - component: {fileID: 663148879}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &663148879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 663148878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dfabcc5121bcb449b3678a252124851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AutoUnparentOnAwake: 1
-  gameState: 0
---- !u!4 &663148880
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 663148878}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2203511, y: -0.48808634, z: 1.0627128}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705479326
 GameObject:
   m_ObjectHideFlags: 0
@@ -31335,7 +31289,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 133271544}
   - {fileID: 519420032}
-  - {fileID: 663148880}
   - {fileID: 992193671}
   - {fileID: 234361389}
   - {fileID: 447431736}
