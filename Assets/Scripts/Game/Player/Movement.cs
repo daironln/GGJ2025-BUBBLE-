@@ -41,6 +41,9 @@ public class Movement : MonoBehaviour
     public ParticleSystem slideParticle;
     private BetterJumping _betterJumping;
     
+    [Space]
+    [SerializeField] private float raycastGarbWallCornerOffser = 2f;
+    
 
     #endregion
 
@@ -61,6 +64,12 @@ public class Movement : MonoBehaviour
     
     private void Update()
     {
+        Move();
+
+
+    }
+
+    private void Move(){
         var x = Input.GetAxis("Horizontal");
         var y = Input.GetAxis("Vertical");
         var xRaw = Input.GetAxisRaw("Horizontal");
@@ -73,10 +82,13 @@ public class Movement : MonoBehaviour
         if (_coll.onWall && Input.GetButton("Fire3") && canMove)
         {
             if(side != _coll.wallSide)
-                _anim.Flip(side*-1);
+                _anim.Flip(side);//-1
                 
             wallGrab = true;
             wallSlide = false;
+
+            // GrabWallCorner(side);
+
         }
 
         if (Input.GetButtonUp("Fire3") || !_coll.onWall || !canMove)
@@ -163,6 +175,20 @@ public class Movement : MonoBehaviour
         }
     }
 
+    private void GrabWallCorner(int side){
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + raycastGarbWallCornerOffser), Vector2.right * side, 1.5f, _coll.groundLayer);
+
+        //Reproducir animacion de agarre de esquina
+        if (hit.collider == null)
+        {
+            _anim.SetTrigger("grabCornerWall");
+
+            Debug.Log("Agarrando esquina de la pared");
+        }
+        
+        Debug.DrawRay(new Vector2(transform.position.x, transform.position.y + raycastGarbWallCornerOffser), Vector2.right * 1.5f * side, Color.red);
+    }
+
     // ReSharper disable Unity.PerformanceAnalysis
     private void Dash(float x, float y)
     {
@@ -241,7 +267,7 @@ public class Movement : MonoBehaviour
     {
         //No flip
         if(_coll.wallSide != side)
-            _anim.Flip(side * -1);
+            _anim.Flip(side);//-1
 
         if (!canMove)
             return;
