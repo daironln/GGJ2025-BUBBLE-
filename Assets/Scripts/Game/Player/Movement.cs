@@ -74,6 +74,7 @@ public class Movement : MonoBehaviour
         {
             if(side != _coll.wallSide)
                 _anim.Flip(side*-1);
+                
             wallGrab = true;
             wallSlide = false;
         }
@@ -238,6 +239,7 @@ public class Movement : MonoBehaviour
 
     private void WallSlide()
     {
+        //No flip
         if(_coll.wallSide != side)
             _anim.Flip(side * -1);
 
