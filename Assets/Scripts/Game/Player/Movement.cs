@@ -260,6 +260,7 @@ public class Movement : MonoBehaviour
         side = _anim.sr.flipX ? -1 : 1;
 
         jumpParticle.Play();
+        _anim.SetBool("attack", false); /////////////////////
     }
     private void RigidbodyDrag(float x)
     {

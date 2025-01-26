@@ -69,6 +69,10 @@ public class Animation : MonoBehaviour
         _anim.SetTrigger(trigger);
     }
 
+    public void SetBool(string name, bool value){
+        _anim.SetBool(name, value);
+    }
+
     public void Flip(int side)
     {
 

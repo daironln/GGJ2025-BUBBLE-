@@ -5,14 +5,17 @@ using System.Runtime.InteropServices;
 
 public class Attack : MonoBehaviour
 {
-    private Animation _anim;
+    public Animator _anim;
     private bool canAttack = true;
     private BubbleAttack bubbleAttack;
+
+    [SerializeField]
+    private float cullDown = 0.5f;
 
 
     private void Awake()
     {
-        _anim = GetComponentInChildren<Animation>();
+        // _anim = GetComponentInChildren<Animator>();
         bubbleAttack = GetComponent<BubbleAttack>();
     }
 
@@ -28,7 +31,7 @@ public class Attack : MonoBehaviour
         {
             if (canAttack)
             {
-                _anim.SetTrigger("attack");
+                _anim.SetBool("attack", true);
                 bubbleAttack.LaunchBubble();
 
                 canAttack = false;
@@ -38,9 +41,18 @@ public class Attack : MonoBehaviour
         }
 
         //Cuando la animacion de ataque termina se activa la variable canAttack para que se pueda volver a atacar
-        if (!_anim.IsAnimationPlaying("Attack"))
+        if (cullDown > 0)
+        {
+            cullDown -= Time.deltaTime;
+        }
+        else
         {
             canAttack = true;
+
+            _anim.SetBool("attack", false);
+
+
+            cullDown = 0.5f;
         }
     }
 }
