@@ -7,11 +7,13 @@ public class Attack : MonoBehaviour
 {
     private Animation _anim;
     private bool canAttack = true;
+    private BubbleAttack bubbleAttack;
 
 
     private void Awake()
     {
         _anim = GetComponentInChildren<Animation>();
+        bubbleAttack = GetComponent<BubbleAttack>();
     }
 
     private void Update()
@@ -27,6 +29,8 @@ public class Attack : MonoBehaviour
             if (canAttack)
             {
                 _anim.SetTrigger("attack");
+                bubbleAttack.LaunchBubble();
+
                 canAttack = false;
 
                 Debug.Log("Ataque");
@@ -34,7 +38,7 @@ public class Attack : MonoBehaviour
         }
 
         //Cuando la animacion de ataque termina se activa la variable canAttack para que se pueda volver a atacar
-        if (_anim.IsAnimationPlaying("Attack"))
+        if (!_anim.IsAnimationPlaying("Attack"))
         {
             canAttack = true;
         }

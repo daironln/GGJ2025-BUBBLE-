@@ -7,23 +7,17 @@ public class BubbleAttack : MonoBehaviour
     public float bubbleSpeed = 5f;
     public float floatAmplitude = 0.5f; 
     public float floatFrequency = 2f; 
+    public float speedRedirect = 4f;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P)) 
-        {
-            LaunchBubble();
-        }
-    }
-
-    void LaunchBubble()
+    public void LaunchBubble()
     {
         GameObject bubble = Instantiate(bubblePrefab, bubbleSpawnPoint.position, Quaternion.identity);
         BubbleMovement bubbleMovement = bubble.GetComponent<BubbleMovement>();
 
         if (bubbleMovement != null)
         {
-            bubbleMovement.Initialize(bubbleSpeed, floatAmplitude, floatFrequency);
+            bubbleMovement.Initialize(bubbleSpeed, floatAmplitude, floatFrequency, speedRedirect);
         }   
     }
+
 }

@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Art/Animations/Prueba.meta
 guid: 4176759dbcf031e4997d93240752ada8
 folderAsset: yes
 DefaultImporter:
+========
+guid: a0105d9c075b2564eb0d2d7112548ecf
+NativeFormatImporter:
+>>>>>>>> Stashed changes:Assets/Art/Sprites/Assets/Animations/algas verdes/alga 1/0001 (1).controller.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

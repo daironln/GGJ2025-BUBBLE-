@@ -44,6 +44,12 @@ public class Movement : MonoBehaviour
     
     [Space]
     [SerializeField] private float raycastGarbWallCornerOffser = 2f;
+
+    [Space]
+    [SerializeField] private Transform rightPositionBubbleSpawn;
+    [SerializeField] private Transform leftPositionBubbleSpawn;
+    [SerializeField] private GameObject bubbleSpawn;
+
     
 
     #endregion
@@ -291,6 +297,22 @@ public class Movement : MonoBehaviour
             return;
 
         rb.velocity = !wallJumped ? new Vector2(dir.x * speed, rb.velocity.y) : Vector2.Lerp(rb.velocity, (new Vector2(dir.x * speed, rb.velocity.y)), wallJumpLerp * Time.deltaTime);
+
+
+        if(rb.velocity.x > 0)
+        {
+            bubbleSpawn.transform.position = rightPositionBubbleSpawn.position;
+            bubbleSpawn.transform.rotation = rightPositionBubbleSpawn.rotation;
+        }
+        else if(rb.velocity.x < 0)
+        {
+            bubbleSpawn.transform.position = leftPositionBubbleSpawn.position;
+            bubbleSpawn.transform.rotation = leftPositionBubbleSpawn.rotation;
+
+
+        }
+
+
     }
 
     private void Jump(Vector2 dir, bool wall)
