@@ -4700,6 +4700,7 @@ GameObject:
   - component: {fileID: 213030897}
   - component: {fileID: 213030898}
   - component: {fileID: 213030899}
+  - component: {fileID: 213030900}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4855,6 +4856,18 @@ MonoBehaviour:
   bottomOffset: {x: 0, y: -0.76}
   rightOffset: {x: 0.3, y: -0.33}
   leftOffset: {x: -0.3, y: -0.33}
+--- !u!114 &213030900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213030893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff5691247d8d0f45856f6d1d384a8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &234361388
 GameObject:
   m_ObjectHideFlags: 0
@@ -4903,8 +4916,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trailParent: {fileID: 234361389}
-  trailColor: {r: 1, g: 0.644318, b: 0.18396229, a: 1}
-  fadeColor: {r: 1, g: 0.4827676, b: 0.11792451, a: 0}
+  trailColor: {r: 1, g: 0.2688679, b: 0.7300868, a: 1}
+  fadeColor: {r: 1, g: 0.11764705, b: 0.62233573, a: 0}
   trailInterval: 0.05
   fadeTime: 0.62
 --- !u!1 &266480812
@@ -31158,7 +31171,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -1493567589, guid: 5706fb115729ce542adecdc236049292, type: 3}
+  m_Sprite: {fileID: -1266027897, guid: 051b05c8d299710408efdac96688478b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

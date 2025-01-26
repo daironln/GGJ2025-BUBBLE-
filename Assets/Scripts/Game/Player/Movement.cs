@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using DG.Tweening;
+using System.Runtime.InteropServices;
 #endregion
 
 public class Movement : MonoBehaviour
@@ -71,6 +72,7 @@ public class Movement : MonoBehaviour
 
     private void Move(){
         var x = Input.GetAxis("Horizontal");
+
         var y = Input.GetAxis("Vertical");
         var xRaw = Input.GetAxisRaw("Horizontal");
         var yRaw = Input.GetAxisRaw("Vertical");
@@ -161,6 +163,7 @@ public class Movement : MonoBehaviour
 
         if (wallGrab || wallSlide || !canMove)
             return;
+
 
         switch (x)
         {

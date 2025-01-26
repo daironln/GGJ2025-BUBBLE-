@@ -50,6 +50,13 @@ public class Animation : MonoBehaviour
 
     }
 
+    //GetCurrentAnimatorStateInfo(0) devuelve el estado actual de la animacion
+    //IsName("nombre de la animacion") compara el nombre de la animacion con el estado actual
+    public bool IsAnimationPlaying(string name)
+    {
+        return _anim.GetCurrentAnimatorStateInfo(0).IsName(name);
+    }
+
     public void SetHorizontalMovement(float x,float y, float yVel)
     {
         _anim.SetFloat(HorizontalAxis, x);
