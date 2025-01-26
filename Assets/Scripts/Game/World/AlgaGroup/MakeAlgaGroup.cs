@@ -25,7 +25,14 @@ public class MakeAlgaGroup : MonoBehaviour
             float scale = Random.Range(0.5f, 1.5f);
             alga.transform.localScale = new Vector3(scale, scale, scale);
            
-            Instantiate(alga, transform.position + position, Quaternion.identity, transform);
+            var x =Instantiate(alga, transform.position + position, Quaternion.identity, transform);
+
+            x.transform.position = new Vector3(
+                Random.Range(transform.position.x - radius, transform.position.x + radius),
+                transform.position.y,
+                Random.Range(transform.position.z - radius, transform.position.z + radius)
+            );
+
         }
     }
     void Start()
