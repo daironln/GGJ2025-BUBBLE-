@@ -50,6 +50,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private Transform leftPositionBubbleSpawn;
     [SerializeField] private GameObject bubbleSpawn;
 
+    private PlayerAudioController playerAudioController;
+
     
 
     #endregion
@@ -66,6 +68,8 @@ public class Movement : MonoBehaviour
         _coll = GetComponent<Collision>();
         rb = GetComponent<Rigidbody2D>();
         _anim = GetComponentInChildren<Animation>();
+
+        playerAudioController = GetComponent<PlayerAudioController>();
     }
 
     
@@ -348,6 +352,8 @@ public class Movement : MonoBehaviour
         GetComponent<BetterJumping>().enabled = false;
         wallJumped = true;
         isDashing = true;
+
+        playerAudioController.PlayDashSound();
 
         yield return new WaitForSeconds(.3f);
 

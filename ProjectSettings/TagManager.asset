@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Obstacle
+  - Killer
   layers:
   - Default
   - TransparentFX

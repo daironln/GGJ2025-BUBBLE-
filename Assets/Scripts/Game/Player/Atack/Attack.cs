@@ -10,13 +10,16 @@ public class Attack : MonoBehaviour
     private BubbleAttack bubbleAttack;
 
     [SerializeField]
-    private float cullDown = 0.5f;
+    private float cullDown = 0.8f;
+
+    private PlayerAudioController playerAudioController;
 
 
     private void Awake()
     {
         // _anim = GetComponentInChildren<Animator>();
         bubbleAttack = GetComponent<BubbleAttack>();
+        playerAudioController = GetComponent<PlayerAudioController>();
     }
 
     private void Update()
@@ -33,6 +36,8 @@ public class Attack : MonoBehaviour
             {
                 _anim.SetBool("attack", true);
                 bubbleAttack.LaunchBubble();
+
+                playerAudioController.PlayAttackSound();
 
                 canAttack = false;
 
