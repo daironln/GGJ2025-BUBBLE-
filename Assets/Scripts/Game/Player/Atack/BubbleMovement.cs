@@ -147,6 +147,12 @@ public class BubbleMovement : MonoBehaviour
         else if(collision.CompareTag("Killer") && isEnemyCaptured)
         {
             Debug.Log("Bubble And Enemy Destryed");
+
+            Score.Instance.AddScore();
+
+
+
+
             Destroy(gameObject);
             Destroy(capturedEnemy.gameObject);
         }

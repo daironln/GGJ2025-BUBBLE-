@@ -30,7 +30,7 @@ public class Attack : MonoBehaviour
     //Esta funcion hace que al presionar el boton de ataque se active la animacion de ataque y no se pueda atacar de nuevo hasta que se termine la animacion
     public void AttackButton()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetButton("Fire2"))
         {
             if (canAttack)
             {
